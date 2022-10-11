@@ -16,6 +16,7 @@ import static org.junit.Assert.assertTrue;
 @RunWith(SerenityRunner.class)
 public class LoginTest {
 
+    public static final String CARD_NAME = "London Leicester Square";
     @Managed
     WebDriver driver;
 
@@ -42,7 +43,21 @@ public class LoginTest {
 
         sleep(5000);
 
+        //Validate SRP
         premierInn.validateSearchResultsPage();
+
+        //SRP - scroll to element
+        premierInn.scrollToElement();
+
+
+        //SRP - HotelCard check parking facility
+        premierInn.checkParkingFacility(CARD_NAME);
+
+        //SRP - HotelCard check restaurant facility
+        premierInn.checkRestaurantFacility(CARD_NAME);
+
+        //SRP - HotelCard check restaurant facility
+        premierInn.checkAirConFacility(CARD_NAME);
 
     }
 
