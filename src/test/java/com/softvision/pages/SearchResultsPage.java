@@ -11,4 +11,9 @@ public class SearchResultsPage extends PageObject {
 
         assertTrue(getDriver().findElement(By.cssSelector(".chakra-container.css-nbgign")).isDisplayed());
     }
+
+    public void selectHotel() {
+
+        getDriver().findElement(By.cssSelector("[data-testid=SRP-hotel-button]")).click();
+    }
 }
