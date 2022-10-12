@@ -7,13 +7,16 @@ import net.thucydides.core.annotations.Managed;
 import net.thucydides.core.annotations.Steps;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 @Slf4j
 @RunWith(SerenityRunner.class)
 public class LoginTest {
 
+    public static final String CARD_NAME = "London Leicester Square";
     @Managed
     WebDriver driver;
 
@@ -25,7 +28,6 @@ public class LoginTest {
 
         driver.get("https://premier-inn.dev.opera.whitbread.digital/en");
         driver.manage().window().maximize();
-
 
         //Login
         premierInn.login("automation_user", "qR$N?*vE5ps3+s@v3!*3=9PTn#xxk=");
@@ -41,7 +43,6 @@ public class LoginTest {
 
         sleep(5000);
 
-        //Search page
         premierInn.validateSearchResultsPage();
         premierInn.selectHotel();
 
@@ -69,6 +70,19 @@ public class LoginTest {
         premierInn.validateAncillariesPage();
 
 
+        //SRP - scroll to element
+        premierInn.scrollToElement();
+
+
+        //SRP - HotelCard check parking facility
+        premierInn.checkParkingFacility(CARD_NAME);
+
+        //SRP - HotelCard check restaurant facility
+        premierInn.checkRestaurantFacility(CARD_NAME);
+
+        //SRP - HotelCard check restaurant facility
+        premierInn.checkAirConFacility(CARD_NAME);
+
     }
 
     private void sleep(int miliseconds) {
@@ -78,7 +92,4 @@ public class LoginTest {
             log.error("Sleep failed.");
         }
     }
-
-
-
 }
