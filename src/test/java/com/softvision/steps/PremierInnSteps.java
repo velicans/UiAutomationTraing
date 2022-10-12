@@ -1,8 +1,6 @@
 package com.softvision.steps;
 
-import com.softvision.pages.HomePage;
-import com.softvision.pages.LoginPage;
-import com.softvision.pages.SearchResultsPage;
+import com.softvision.pages.*;
 import lombok.extern.slf4j.Slf4j;
 import net.thucydides.core.annotations.Step;
 import org.openqa.selenium.By;
@@ -55,5 +53,25 @@ public class PremierInnSteps {
 
         searchResultsPage.validateSearchResultsPageContainer();
         log.info("Pagina incarcata");
+    }
+
+    @Step
+    public void scrollToElement(){
+        searchResultsPage.scrollToElement();
+    }
+
+    @Step
+    public void checkParkingFacility(String cardName) {
+        hotelCard.checkParkingFacility(cardName);
+    }
+
+    @Step
+    public void checkRestaurantFacility(String cardName) {
+        hotelCard.checkRestaurantFacility(cardName);
+    }
+
+    @Step
+    public void checkAirConFacility(String cardName) {
+        hotelCard.checkAirConFacility(cardName);
     }
 }

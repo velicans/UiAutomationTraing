@@ -15,4 +15,9 @@ public class SearchResultsPage extends PageObject {
 
         assertTrue(getDriver().findElement(By.cssSelector(".chakra-container.css-nbgign")).isDisplayed());
     }
+
+    public void scrollToElement(){
+        WebElement element = getDriver().findElement(By.cssSelector(".infinite-scroll-component div:nth-child(39)"));
+        uiUtils.scrollToElement(element);
+    }
 }

@@ -44,7 +44,7 @@ public class LoginTest {
         sleep(5000);
 
         premierInn.validateSearchResultsPage();
-        premierInn.selectHotel();
+/*        premierInn.selectHotel();
 
         sleep(3000);
 
@@ -67,7 +67,7 @@ public class LoginTest {
         premierInn.clickBookNow();
 
         //Ancillaries
-        premierInn.validateAncillariesPage();
+        premierInn.validateAncillariesPage();*/
 
 
         //SRP - scroll to element
