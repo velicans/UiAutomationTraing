@@ -31,14 +31,13 @@ public class PremierInnSteps {
     public void validateCurrentUrl(String expectedUrl) {
 
         String currentUrl = loginPage.getCurrentUrl();
-        assertEquals(expectedUrl ,currentUrl, "Expected url is not matching the current url.");
+        assertEquals("Expected url is not matching the current url.", expectedUrl ,currentUrl);
     }
 
     @Step
-    public void editSearchBar() {
+    public void editSearchBar(String locationName) {
 
-        homePage.editSearchBar();
-
+        homePage.editSearchBar(locationName);
 
     }
 
@@ -73,5 +72,31 @@ public class PremierInnSteps {
     @Step
     public void checkAirConFacility(String cardName) {
         hotelCard.checkAirConFacility(cardName);
+    }
+
+    @Step
+    public void selectHotel() {
+        searchResultsPage.selectHotel();
+    }
+
+    @Step
+    public void validateHotelDetailsPage() {
+        hotelDetailsPage.validateHotelDetailsPageContainer();
+    }
+
+    @Step
+    public void scrollToOurRooms(){
+        hotelDetailsPage.scrollToElement();
+    }
+
+    @Step
+
+    public void seeHotelFacilities() {
+        hotelDetailsPage.seeHotelFacilities();
+    }
+
+    @Step
+    public void seeOurRooms() {
+        hotelDetailsPage.seeOurRooms();
     }
 }

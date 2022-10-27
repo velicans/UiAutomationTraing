@@ -35,7 +35,7 @@ public class LoginTest {
         premierInn.validateCurrentUrl("https://premier-inn.dev.opera.whitbread.digital/en");
 
         //Edit search bar
-        premierInn.editSearchBar();
+        premierInn.editSearchBar("London Leicester Square");
 
 
         //Press Search button

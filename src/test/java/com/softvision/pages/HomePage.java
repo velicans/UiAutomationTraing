@@ -6,10 +6,10 @@ import org.openqa.selenium.By;
 public class HomePage extends PageObject {
 
 
-    public void editSearchBar() {
+    public void editSearchBar(String locationName) {
 
         getDriver().findElement(By.cssSelector("[data-testid=locationPicker-locationPlaceholder]")).click();
-        getDriver().findElement(By.cssSelector("[data-testid=locationPicker-locationPlaceholder]")).sendKeys("Manchester Old");
+        getDriver().findElement(By.cssSelector("[data-testid=locationPicker-locationPlaceholder]")).sendKeys(locationName);
         getDriver().findElement(By.cssSelector("[data-testid=\"locationPicker-autocompleteList\"] :first-child")).click();
         getDriver().findElement(By.cssSelector(".react-datepicker__input-container")).click();
         getDriver().findElement(By.cssSelector(".react-datepicker__navigation.react-datepicker__navigation--next")).click();
