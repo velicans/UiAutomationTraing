@@ -14,16 +14,16 @@ public class HotelCard extends SearchResultsPage{
 
 
     public void checkParkingFacility(String cardName) {
-        WebElementFacade element = findCard(cardName).find(By.cssSelector(".infinite-scroll-component div:nth-child(39)"));
+        WebElementFacade element = findCard(cardName).find(By.cssSelector("[src=\"https://secure2.premierinn.com/etc.clientlibs/pi/clientlibs/icons/resources/facilities/codes/COC.svg\"]"));
         element.shouldBeCurrentlyVisible();    }
 
     public void checkRestaurantFacility(String cardName) {
-        WebElementFacade element = findCard(cardName).find(By.cssSelector(".infinite-scroll-component div:nth-child(39)"));
+        WebElementFacade element = findCard(cardName).find(By.cssSelector("[src=\"https://secure2.premierinn.com/etc.clientlibs/pi/clientlibs/icons/resources/facilities/codes/DIN.svg\"]"));
         element.shouldBeCurrentlyVisible();
     }
 
     public void checkAirConFacility(String cardName) {
-        WebElementFacade element = findCard(cardName).find(By.cssSelector(".infinite-scroll-component div:nth-child(39)"));
+        WebElementFacade element = findCard(cardName).find(By.cssSelector("[src='https://secure2.premierinn.com/etc.clientlibs/pi/clientlibs/icons/resources/facilities/codes/ACO.svg']"));
         element.shouldBeCurrentlyVisible();
         //uiUtils.checkFacility(element);
     }
