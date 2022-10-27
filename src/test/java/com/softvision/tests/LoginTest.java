@@ -41,7 +41,7 @@ public class LoginTest {
         //Press Search button
         premierInn.clickSearch();
 
-        sleep(5000);
+        //sleep(5000);
 
         //Validate SRP
         premierInn.validateSearchResultsPage();
