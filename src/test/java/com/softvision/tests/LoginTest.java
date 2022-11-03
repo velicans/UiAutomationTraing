@@ -16,6 +16,7 @@ import static org.junit.Assert.assertTrue;
 @RunWith(SerenityRunner.class)
 public class LoginTest {
 
+    public static final String CARD_NAME = "London Leicester Square";
     @Managed
     WebDriver driver;
 
@@ -34,7 +35,7 @@ public class LoginTest {
         premierInn.validateCurrentUrl("https://premier-inn.dev.opera.whitbread.digital/en");
 
         //Edit search bar
-        premierInn.editSearchBar();
+        premierInn.editSearchBar("London Leicester Square");
 
 
         //Press Search button
@@ -43,6 +44,44 @@ public class LoginTest {
         sleep(5000);
 
         premierInn.validateSearchResultsPage();
+/*        premierInn.selectHotel();
+
+        sleep(3000);
+
+        //HDP
+        premierInn.validateHotelDetailsPage();
+
+
+        //Open See all Hotel Facilities
+        premierInn.seeHotelFacilities();
+
+        sleep(5000);
+
+        //Scroll to our rooms
+        premierInn.scrollToBottom();
+
+        //See our rooms
+        premierInn.seeOurRooms();
+
+        //Choose rate and book now
+        premierInn.clickBookNow();
+
+        //Ancillaries
+        premierInn.validateAncillariesPage();*/
+
+
+        //SRP - scroll to element
+        premierInn.scrollToElement();
+
+
+        //SRP - HotelCard check parking facility
+        premierInn.checkParkingFacility(CARD_NAME);
+
+        //SRP - HotelCard check restaurant facility
+        premierInn.checkRestaurantFacility(CARD_NAME);
+
+        //SRP - HotelCard check restaurant facility
+        premierInn.checkAirConFacility(CARD_NAME);
 
     }
 
